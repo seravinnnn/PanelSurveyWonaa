@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kumpulan Panel Survey Penghasil Uang — by WONA</title>
+    <meta
+      name="description"
+      content="Daftar panel survei penghasil uang lengkap dengan link pendaftaran. Dibuat oleh WONA untuk Seravin."
+    />
+
+    <style>
+      :root {
+        --card: #0b1426;
+        --text: #e5e7eb;
+        --muted: #9aa4b2;
+        --primary: #38bdf8;
+        --border: #1f2937;
+        --shadow: 0 20px 60px -30px rgba(0, 0, 0, 0.6);
+        --radius: 16px;
+        --glow: #38bdf8aa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial;
+        line-height: 1.6;
+        /* Aurora gradient bergerak */
+        background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+        background-size: 600% 600%;
+        animation: aurora 18s ease infinite;
+        position: relative;
+        overflow-x: hidden;
+      }
+      @keyframes aurora {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Lapisan bokeh lembut yang pelan bergerak */
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        inset: -20vmax;
+        pointer-events: none;
+        filter: blur(60px);
+        opacity: 0.22;
+        background: radial-gradient(
+            40vmax 40vmax at 20% 30%,
+            #38bdf844 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            30vmax 30vmax at 80% 20%,
+            #60a5fa55 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            30vmax 30vmax at 60% 80%,
+            #22d3ee44 0%,
+            transparent 60%
+          );
+        z-index: -1;
+        animation: floaty 24s ease-in-out infinite alternate;
+      }
+      body::after {
+        animation-duration: 32s;
+        animation-direction: alternate-reverse;
+        opacity: 0.18;
+      }
+      @keyframes floaty {
+        from {
+          transform: translate3d(-2%, -2%, 0) scale(1);
+        }
+        to {
+          transform: translate3d(2%, 2%, 0) scale(1.06);
+        }
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 24px;
+      }
+      .header {
+        padding: 36px 0 8px;
+      }
+      .title {
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        font-size: clamp(28px, 3.5vw, 40px);
+      }
+      .accent {
+        color: var(--primary);
+      }
+      .lead {
+        max-width: 720px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+      @media (min-width: 600px) {
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (min-width: 950px) {
+        .grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .card {
+        display: block;
+        padding: 18px;
+        background: linear-gradient(180deg, #0b1426, #0b1426f5);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        text-decoration: none;
+        color: inherit;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          border-color 0.2s ease, filter 0.2s ease;
+        position: relative;
+        isolation: isolate;
+        transform: translateY(4px);
+        opacity: 0;
+      }
+      /* Glow biru saat hover */
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        z-index: -1;
+        background: radial-gradient(
+          60% 40% at 50% 0%,
+          var(--glow),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        filter: blur(12px);
+      }
+      .card:hover {
+        transform: translateY(-4px) scale(1.015);
+        box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.8);
+        border-color: #263244;
+        filter: saturate(1.06);
+      }
+      .card:hover::after {
+        opacity: 0.9;
+      }
+
+      .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .name {
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+      }
+      .badge {
+        font-size: 10px;
+        color: #93a3b8;
+        border: 1px solid #243244;
+        padding: 4px 8px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .desc {
+        margin-top: 8px;
+        color: #c8d0da;
+        font-size: 14px;
+      }
+      .cta {
+        margin-top: 14px;
+        display: inline-block;
+        color: var(--primary);
+        font-size: 14px;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .footer {
+        border-top: 1px solid var(--border);
+        margin-top: 28px;
+        font-size: 12px;
+        color: var(--muted);
+        padding: 18px 0;
+      }
+
+      /* Animasi masuk (stagger) */
+      .enter {
+        animation: fadeUp 0.7s cubic-bezier(0.22, 0.9, 0.24, 1) both;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">
+          Kumpulan Panel Survey Penghasil Uang
+          <span class="accent">by WONA VIVIN</span>
+        </h1>
+        <p class="lead">
+          Disini udah saya siapin kumpulan panel survey nya, tinggal klik aja,
+          nanti langsung mengarah ke halaman panel utama, kalian tinggal daftar,
+          disarankan cukup satu email tapi fokus jika garap survey, yg penting
+          memenuhi target pasar, agar selalu lolos. Di setiap usaha pasti ada
+          kesulitan, semoga dari kesulitan itu kalian bisa tumbuh jadi pribadi
+          yg lebih kuat, karna ini kan termasuk early, pasti untuk awal awal
+          pusing banget.
+        </p>
+      </header>
+
+      <main>
+        <div class="grid" id="grid">
+          <!-- 1: LifePoints -->
+          <a
+            class="card"
+            href="https://www.lifepointspanel.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">LifePoints</div>
+              <span class="badge">Survei</span>
+            </div>
+            <p class="desc">
+              Panel survei global. Poin bisa ditukar ke PayPal/gift card.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+          <!-- 2: Responova (Populix) -->
+          <a
+            class="card"
+            href="https://survey.populix.co/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">Responova (Populix)</div>
+              <span class="badge">Survei</span>
+            </div>
+            <p class="desc">
+              Aggregator survei dari Populix. Relevan buat user Indonesia.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+          <!-- 3: Lootup -->
+          <a
+            class="card"
+            href="https://lootup.me/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">Lootup</div>
+              <span class="badge">Survei</span>
+            </div>
+            <p class="desc">
+              Survei, tugas, video—redeem ke PayPal, gift card, atau crypto.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+          <!-- 4: Coinpayu -->
+          <a
+            class="card"
+            href="https://www.coinpayu.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">Coinpayu</div>
+              <span class="badge">Rewards</span>
+            </div>
+            <p class="desc">
+              Rewards platform: survei, games, offers. Bayar tunai/gift
+              card/crypto.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+          <!-- 5: OpinionWorld -->
+          <a
+            class="card"
+            href="https://www.opinionworld.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">OpinionWorld</div>
+              <span class="badge">Survei</span>
+            </div>
+            <p class="desc">
+              Panel riset pasar—poin ditukar ke gift card atau PayPal.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+          <!-- 6: Valued Opinions (FIX: pakai link resmi) -->
+          <a
+            class="card"
+            href="https://www.valuedopinions.co.id/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="card-head">
+              <div class="name">Valued Opinions</div>
+              <span class="badge">Survei</span>
+            </div>
+            <p class="desc">
+              Survei berbayar dengan imbalan gift card & voucher.
+            </p>
+            <span class="cta">Kunjungi situs →</span>
+          </a>
+        </div>
+      </main>
+
+      <footer class="footer">
+        © <span id="year"></span> WONA · Dibuat untuk kalian sang perintis yg ku
+        kagumi, SEMANGAT MENGEJAR CUAN DEMI BERTAHAN HIDUP.
+      </footer>
+    </div>
+
+    <script>
+      // Tahun otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Stagger animasi masuk untuk setiap kartu
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((el, i) => {
+        el.style.animationDelay = i * 90 + "ms";
+        el.classList.add("enter");
+      });
+    </script>
+  </body>
+</html>
+```
